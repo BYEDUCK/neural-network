@@ -1,6 +1,15 @@
 import numpy as np
 from random import randint
 
+u"""Program przedstawiajacy siec neuronowa:
+    weights_I2H - wagi polaczen miedzy wejsciem a warstwa ukryta
+    weights_H2O - wagi polaczen miedzy warstwa ukryta a warstwa wyjsciowa
+    f - funkcja aktywacji neuronu (tutaj sigmoidealna unipolarna)
+    df - pochodna funkcji f
+    
+    Numery przy fragmentach kodu nawiazuje do numeracji kolejnych krokow algorytmu
+    back propagation w wykladzie 7 przedmiotu SNB
+    """
 
 class NeuralNetwork:
     numberOfInputNeurons = 0
@@ -91,11 +100,6 @@ class NeuralNetwork:
             out = self.countOutputFromNet(oNets)
 
             desiredOutput = target[drawnInputIndex]
-
-            # 11 test
-            # err, output = net.test(inputData, target)
-            # if err < tolerance:
-            # break
 
             # 7
             outputLayerErrorSignal = (desiredOutput - out) * NeuralNetwork.df(oNets, self.beta)
