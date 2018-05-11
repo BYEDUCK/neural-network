@@ -3,17 +3,6 @@ import os.path
 from net import *
 import matplotlib.pyplot as plt
 
-u"""Program przedstawiajacy siec neuronowa:
-    weights_I2H - wagi polaczen miedzy wejsciem a warstwa ukryta
-    weights_H2O - wagi polaczen miedzy warstwa ukryta a warstwa wyjsciowa
-    f - funkcja aktywacji neuronu (tutaj sigmoidealna unipolarna)
-    df - pochodna funkcji f
-    
-    Numery przy fragmentach kodu nawiazuje do numeracji kolejnych krokow algorytmu
-    back propagation w wykladzie 7 przedmiotu SNB
-    """
-
-
 def getDataFromCSVFile(path):
     with open(path, 'rt') as csv_file:
         data = np.genfromtxt(csv_file, delimiter=',')
